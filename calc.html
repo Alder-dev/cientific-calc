@@ -29,247 +29,269 @@
       class="border m-4 d-flex justify-content-center align-items-center"
       style="height: 600px"
     >
-      <div class="calculator">
-        <div class="border border-4 border-dark bg-dark rounded">
-          <strong>
-            <div class="d-grid">
-              <input
-                type="text"
-                name="inputOp"
-                id="inputOp"
-                class="form-control-lg text-end"
-                value="0"
-              />
-            </div>
-            <table class="table border-4 bg-secondary border-dark border">
-              <br />
-              <tr>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-light btn-outline-info"
-                    type="button"
-                    value="%"
-                  />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-light btn-outline-info"
-                    type="button"
-                    value="Log"
-                  />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-light btn-outline-info"
-                    type="button"
-                    value="√"
-                  />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-dark btn-outline-warning"
-                    type="button"
-                    value="C"
-                  />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-light btn-outline-info"
-                    type="button"
-                    value="Sin"
-                  />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-light btn-outline-info"
-                    type="button"
-                    value="Cos"
-                  />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-light btn-outline-info"
-                    type="button"
-                    value="Tan"
-                  />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-dark btn-outline-info"
-                    type="button"
-                    value="/"
-                  />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-lg btn-light btn-outline-dark"
-                    type="button"
-                    value="9"
-                  />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-lg btn-light btn-outline-dark"
-                    type="button"
-                    value="8"
-                  />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-lg btn-light btn-outline-dark"
-                    type="button"
-                    value="7"
-                  />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-lg btn-dark btn-outline-info"
-                    type="button"
-                    value="*"
-                  />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-lg btn-light btn-outline-dark"
-                    type="button"
-                    value="6"
-                  />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                  <input
-                    class="btn btn-lg btn-light btn-outline-dark"
-                    type="button"
-                    value="5"
-                  />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                    <input
-                      class="btn btn-lg btn-light btn-outline-dark"
-                      type="button"
-                      value="4"
-                    />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                    <input
-                      class="btn btn-lg btn-dark btn-outline-info"
-                      type="button"
-                      value="-"
-                    />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="d-grid gap-2">
-                    <input
-                      class="btn btn-lg btn-light btn-outline-dark"
-                      type="button"
-                      value="3"
-                    />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                    <input
-                      class="btn btn-lg btn-light btn-outline-dark"
-                      type="button"
-                      value="2"
-                    />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                    <input
-                      class="btn btn-lg btn-light btn-outline-dark"
-                      type="button"
-                      value="1"
-                    />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                    <input
-                      class="btn btn-lg btn-dark btn-outline-info"
-                      type="button"
-                      value="+"
-                    />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="d-grid gap-2">
-                    <input
-                      class="btn btn-lg btn-light btn-outline-dark"
-                      type="button"
-                      value="0"
-                    />
-                  </div>
-                </td>
-                <td>
-                  <div class="d-grid gap-2">
-                    <input
-                      class="btn btn-lg btn-light btn-outline-dark"
-                      type="button"
-                      value="."
-                    />
-                  </div>
-                </td>
-                <td colspan="2">
-                  <div class="d-grid gap-2">
-                    <input
-                      class="btn btn-lg btn-dark btn-outline-success"
-                      type="button"
-                      value="="
-                    />
-                  </div>
-                </td>
-              </tr>
-            </table>
-          </strong>
+      <form name="calc">
+        <div class="calculator">
+          <div class="border border-4 border-dark bg-dark rounded">
+            <strong>
+              <div class="d-grid">
+                <input
+                  type="text"
+                  name="inputOp"
+                  id="inputOp"
+                  class="form-control-lg text-end bg-light"
+                  value="0"
+                  disabled
+                />
+              </div>
+              <table class="table border-4 bg-secondary border-dark border">
+                <br />
+                <tr>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-light btn-outline-info"
+                        type="button"
+                        value="%"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-light btn-outline-info"
+                        type="button"
+                        value="Log"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-light btn-outline-info"
+                        type="button"
+                        value="√"
+                        onclick="raiz()"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-dark btn-outline-warning"
+                        type="button"
+                        value="C"
+                        onclick="clearInput()"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-light btn-outline-info"
+                        type="button"
+                        value="Sin"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-light btn-outline-info"
+                        type="button"
+                        value="Cos"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-light btn-outline-info"
+                        type="button"
+                        value="Tan"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-dark btn-outline-info"
+                        type="button"
+                        value="/"
+                        onclick="ingOp(this.value)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-light btn-outline-dark"
+                        type="button"
+                        value="9"
+                        onclick="ingNum(this.value)"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-light btn-outline-dark"
+                        type="button"
+                        value="8"
+                        onclick="ingNum(this.value)"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-light btn-outline-dark"
+                        type="button"
+                        value="7"
+                        onclick="ingNum(this.value)"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-dark btn-outline-info"
+                        type="button"
+                        value="*"
+                        onclick="ingOp(this.value)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-light btn-outline-dark"
+                        type="button"
+                        value="6"
+                        onclick="ingNum(this.value)"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-light btn-outline-dark"
+                        type="button"
+                        value="5"
+                        onclick="ingNum(this.value)"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-light btn-outline-dark"
+                        type="button"
+                        value="4"
+                        onclick="ingNum(this.value)"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-dark btn-outline-info"
+                        type="button"
+                        value="-"
+                        onclick="ingOp(this.value)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-light btn-outline-dark"
+                        type="button"
+                        value="3"
+                        onclick="ingNum(this.value)"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-light btn-outline-dark"
+                        type="button"
+                        value="2"
+                        onclick="ingNum(this.value)"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-light btn-outline-dark"
+                        type="button"
+                        value="1"
+                        onclick="ingNum(this.value)"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-dark btn-outline-info"
+                        type="button"
+                        value="+"
+                        onclick="ingOp(this.value)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-light btn-outline-dark"
+                        type="button"
+                        value="0"
+                        onclick="ingNum(this.value)"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-light btn-outline-dark"
+                        type="button"
+                        value="."
+                        onclick="ingNum(this.value)"
+                      />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-grid gap-2">
+                      <input
+                        class="btn btn-lg btn-dark btn-outline-success"
+                        type="button"
+                        value="="
+                        onclick="calcResult()"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </strong>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </body>
 
   <!-- JavaScript -->
+  <script src="js/calc.js"></script>
 
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
