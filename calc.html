@@ -33,13 +33,21 @@
         <div class="calculator">
           <div class="border border-4 border-dark bg-dark rounded">
             <strong>
-              <div class="d-grid">
+              <div class="d-grid rounded bg-light">
                 <input
                   type="text"
                   name="inputOp"
                   id="inputOp"
-                  class="form-control-lg text-end bg-light"
+                  class="form-control-lg text-end border rounded-top border-bottom-1 bg-light"
                   value="0"
+                  disabled
+                />
+                <input
+                  type="text"
+                  name="inputRes"
+                  id="inputRes"
+                  class="form-control text-end border rounded-end border-top-0 bg-light"
+                  value=""
                   disabled
                 />
               </div>
@@ -51,7 +59,8 @@
                       <input
                         class="btn btn-light btn-outline-info"
                         type="button"
-                        value="%"
+                        value="^"
+                        onclick="ingOp('**')"
                       />
                     </div>
                   </td>
@@ -61,6 +70,7 @@
                         class="btn btn-light btn-outline-info"
                         type="button"
                         value="Log"
+                        onclick="log()"
                       />
                     </div>
                   </td>
@@ -92,6 +102,7 @@
                         class="btn btn-light btn-outline-info"
                         type="button"
                         value="Sin"
+                        onclick="seno()"
                       />
                     </div>
                   </td>
@@ -101,6 +112,7 @@
                         class="btn btn-light btn-outline-info"
                         type="button"
                         value="Cos"
+                        onclick="coseno()"
                       />
                     </div>
                   </td>
@@ -110,6 +122,7 @@
                         class="btn btn-light btn-outline-info"
                         type="button"
                         value="Tan"
+                        onclick="tangente()"
                       />
                     </div>
                   </td>
@@ -130,7 +143,7 @@
                       <input
                         class="btn btn-lg btn-light btn-outline-dark"
                         type="button"
-                        value="9"
+                        value="7"
                         onclick="ingNum(this.value)"
                       />
                     </div>
@@ -150,7 +163,7 @@
                       <input
                         class="btn btn-lg btn-light btn-outline-dark"
                         type="button"
-                        value="7"
+                        value="9"
                         onclick="ingNum(this.value)"
                       />
                     </div>
@@ -160,7 +173,7 @@
                       <input
                         class="btn btn-lg btn-dark btn-outline-info"
                         type="button"
-                        value="*"
+                        value="×"
                         onclick="ingOp(this.value)"
                       />
                     </div>
@@ -172,7 +185,7 @@
                       <input
                         class="btn btn-lg btn-light btn-outline-dark"
                         type="button"
-                        value="6"
+                        value="4"
                         onclick="ingNum(this.value)"
                       />
                     </div>
@@ -192,7 +205,7 @@
                       <input
                         class="btn btn-lg btn-light btn-outline-dark"
                         type="button"
-                        value="4"
+                        value="6"
                         onclick="ingNum(this.value)"
                       />
                     </div>
@@ -214,7 +227,7 @@
                       <input
                         class="btn btn-lg btn-light btn-outline-dark"
                         type="button"
-                        value="3"
+                        value="1"
                         onclick="ingNum(this.value)"
                       />
                     </div>
@@ -234,7 +247,7 @@
                       <input
                         class="btn btn-lg btn-light btn-outline-dark"
                         type="button"
-                        value="1"
+                        value="3"
                         onclick="ingNum(this.value)"
                       />
                     </div>
