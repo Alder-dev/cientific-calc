@@ -54,14 +54,14 @@ function calcResult() {
 
 // Function: multi -> Multiplicar
 function multi() {
-    if (opWait == "") {
-        numWait = document.calc.inputOp.value;
-        document.calc.inputOp.value += "*";
-        opWait = "*";
-        screenWinum = "no";
-        numScreen = "";
-        usePoint = "no";
-    }
+  if (opWait == "") {
+    numWait = document.calc.inputOp.value;
+    document.calc.inputOp.value += "*";
+    opWait = "*";
+    screenWinum = "no";
+    numScreen = "";
+    usePoint = "no";
+  }
 }
 
 // Function: raiz -> Calcular la raiz cuadrada
@@ -84,44 +84,44 @@ function seno() {
 }
 // Function: coseno -> Calcular el coseno
 function coseno() {
-    if (opWait == "") {
-        document.calc.inputRes.value = Math.cos(numScreen);
-        screenWinum = "yes";
-        opWait = "";
-        usePoint = "no";
-    }
+  if (opWait == "") {
+    document.calc.inputRes.value = Math.cos(numScreen);
+    screenWinum = "yes";
+    opWait = "";
+    usePoint = "no";
+  }
 }
 
 // Function: tangente -> Calcular la tangente
 function tangente() {
-    if (opWait == "") {
-        document.calc.inputRes.value = Math.tan(numScreen);
-        screenWinum = "yes";
-        opWait = "";
-        usePoint = "no";
-    }
+  if (opWait == "") {
+    document.calc.inputRes.value = Math.tan(numScreen);
+    screenWinum = "yes";
+    opWait = "";
+    usePoint = "no";
+  }
 }
 
 // Function: logaritmo -> Calcular el logaritmo
 function log() {
-    if (opWait == "") {
-        document.calc.inputRes.value = Math.log10(numScreen);
-        screenWinum = "yes";
-        opWait = "";
-        usePoint = "no";
-    }
+  if (opWait == "") {
+    document.calc.inputRes.value = Math.log10(numScreen);
+    screenWinum = "yes";
+    opWait = "";
+    usePoint = "no";
+  }
 }
 
 // Function: porcent -> Calcular el porcentaje
 function porcent(num, porcentCalc) {
-    if (opWait == "") {
-        document.calc.inputRes.value = num * porcentCalc / 100;
-        screenWinum = "yes";
-        opWait = "";
-        usePoint = "no";
-    }
+  if (opWait == "") {
+    document.calc.inputRes.value = (num * porcentCalc) / 100;
+    screenWinum = "yes";
+    opWait = "";
+    usePoint = "no";
+  }
 
-    return (num * porcent) / 100;
+  return (num * porcent) / 100;
 }
 
 // Function: Clear -> Limpiar la pantalla
