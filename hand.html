@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test - Calc</title>
+    <title>Test - Hand</title>
 
     <!-- CSS only -->
     <link
@@ -22,9 +22,101 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <br />
+    <center>
+      <h3>Example Hand</h3>
+      <h4>Escribir el nombre para iniciar</h4>
+    </center>
+    <div
+      class="border m-4 d-flex justify-content-center align-items-center"
+      style="height: 50px"
+    >
+      <div class="row g-3">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            id="player1"
+            placeholder="Player 1"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            id="player2"
+            placeholder="Player 2"
+          />
+        </div>
+      </div>
+      <h1>ㅤ</h1>
+      <div class="row g-3">
+        <div class="col">
+          <button id="play" class="btn btn-outline-primary">
+            <i class="fas fa-play"></i>
+          </button>
+        </div>
+      </div>
+      <h1>ㅤ</h1>
+      <div class="row g-3">
+        <h5 id="message"></h5>
+      </div>
+    </div>
+    <div
+      class="border m-4 d-flex justify-content-center align-items-center"
+      style="height: 50px"
+    >
+      <h3></h3>
+      <h3></h3>
+    </div>
+    <div
+      class="border m-4 d-flex justify-content-center align-items-center"
+      style="height: 300px"
+    >
+      <div class="btn-group">
+        <div
+          class="card text-center border bg-dark text-light rounded-4 border-5"
+        >
+          <span>Piedra</span>
+          <button
+            id="rock"
+            type="button"
+            class="btn btn-light btn-outline-secondary rounded-4 border border-dark"
+          >
+            <img src="img/rock.png" width="160" class="rounded-5" />
+          </button>
+        </div>
+        <div
+          class="card text-center border bg-dark text-light rounded-4 border-5"
+        >
+          <span>Papel</span>
+          <button
+            id="paper"
+            type="button"
+            class="btn btn-light btn-outline-secondary rounded-4 border border-dark"
+          >
+            <img src="img/paper.png" width="150" class="rounded-5" />
+          </button>
+        </div>
+        <div
+          class="card text-center border bg-dark text-light rounded-4 border-5"
+        >
+          <span>Tijera</span>
+          <button
+            id="scissors"
+            type="button"
+            class="btn btn-light btn-outline-secondary rounded-4 border border-dark"
+          >
+            <img src="img/scissors.png" width="120" class="rounded-5" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 
   <!-- JavaScript -->
+  <script src="js/hand.js"></script>
 
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
