@@ -1,13 +1,18 @@
-const ROCK = 0;
-const PAPER = 1;
-const SCISSORS = 2;
+const ROCK = "rock";
+const PAPER = "paper";
+const SCISSORS = "scissors";
 
 //var nPlayer1 = document.getElementById("player1").value;
 //var nPlayer2 = document.getElementById("player2").value;
 
 var countPlayer1 = 0;
 var countPlayer2 = 0;
-var nPlayer1 = "";
+var p1txt;
+var nPlayer1 = document.getElementById("player1");
+nPlayer1.addEventListener("keyup", (event) => {
+  p1txt = event.target.value;
+  console.log(p1txt);
+});
 
 const DRAW = 0; // Empate
 const WIN = 1; // Gana el usuario
@@ -19,15 +24,16 @@ const btnScissors = document.getElementById("scissors");
 const txtMessage = document.getElementById("message");
 const txtMessage2 = document.getElementById("message2");
 const btnPlay = document.getElementById("play");
+const computerImg = document.getElementById("computerImg");
 
 btnPlay.addEventListener("click", () => {
-  if (nPlayer1 == "") {
-    nPlayer1 = document.getElementById("player1").value;
+  if (p1txt == undefined || p1txt == 0) {
+    console.log(`Vacio ${p1txt}`);
+    p1txt = undefined;
     txtMessage.innerHTML = "Ingrese su nombre.";
   } else {
     txtMessage.innerHTML = "Juego iniciado.";
-    document.getElementById("player1").value = "";
-
+    
     btnRock.addEventListener("click", () => {
       game(ROCK);
     });
@@ -39,13 +45,17 @@ btnPlay.addEventListener("click", () => {
     btnScissors.addEventListener("click", () => {
       game(SCISSORS);
     });
+
+    document.getElementById("player1").value = "";
+    p1txt = undefined;
   }
 });
 
 function game(userChoice) {
-  const computerOption = Math.floor(Math.random() * 3);
-
+  const computerOption = calcComputerOption();
   const result = calcResult(userChoice, computerOption);
+
+  computerImg.src = `img/${computerOption}.png`;
 
   switch (result) {
     case DRAW:
@@ -64,6 +74,18 @@ function game(userChoice) {
       txtMessage2.innerHTML = `${player1} Puntos: ${countPlayer1}`;
       //console.log(`Puntos player 2: ${countPlayer2}`);
       break;
+  }
+}
+
+function calcComputerOption() {
+  const opcNum = Math.floor(Math.random() * 3);
+  switch (opcNum) {
+    case 0:
+      return ROCK;
+    case 1:
+      return PAPER;
+    case 2:
+      return SCISSORS;
   }
 }
 
