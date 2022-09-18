@@ -2,7 +2,7 @@ const ROCK = "rock";
 const PAPER = "paper";
 const SCISSORS = "scissors";
 
-var turn;
+var turn = 1;
 
 var countPlayer1 = 0;
 var countPlayer2 = 0;
@@ -39,54 +39,55 @@ btnPlay.addEventListener("click", () => {
     txtMessage.innerHTML = "Ingrese un nombre.";
   } else if (p1txt != undefined && p2txt == undefined) {
     txtMessage.innerHTML = "Juego para 1 jugador.";
-    btnRock.addEventListener("click", () => {
-      game(ROCK);
-    });
-
-    btnPaper.addEventListener("click", () => {
-      game(PAPER);
-    });
-
-    btnScissors.addEventListener("click", () => {
-      game(SCISSORS);
-    });
-
+    playng();
     document.getElementById("player1").value = "";
-    //document.getElementById("player2").value = "";
+    document.getElementById("player2").value = "";
   } else if (p1txt == undefined && p2txt != undefined) {
     txtMessage.innerHTML = "Juego para 1 jugador.";
-    btnRock.addEventListener("click", () => {
-      game2(ROCK);
-    });
-
-    btnPaper.addEventListener("click", () => {
-      game2(PAPER);
-    });
-
-    btnScissors.addEventListener("click", () => {
-      game2(SCISSORS);
-    });
-
+    playng2();
     document.getElementById("player1").value = "";
     document.getElementById("player2").value = "";
   } else {
     txtMessage.innerHTML = "Juego para 2 jugadores.";
-    btnRock.addEventListener("click", () => {
-      game(ROCK);
-    });
-
-    btnPaper.addEventListener("click", () => {
-      game(PAPER);
-    });
-
-    btnScissors.addEventListener("click", () => {
-      game(SCISSORS);
-    });
-
-    document.getElementById("player1").value = "";
-    document.getElementById("player2").value = "";
+    if (turn == 0) {
+      playng();
+    } else {
+      playng2();
+    }
   }
 });
+
+function playng() {
+  btnRock.addEventListener("click", () => {
+    game(ROCK);
+  });
+
+  btnPaper.addEventListener("click", () => {
+    game(PAPER);
+  });
+
+  btnScissors.addEventListener("click", () => {
+    game(SCISSORS);
+  });
+  turn = 1;
+  console.log(`${p1txt} turno: ${turn}`);
+}
+
+function playng2() {
+  btnRock.addEventListener("click", () => {
+    game2(ROCK);
+  });
+
+  btnPaper.addEventListener("click", () => {
+    game2(PAPER);
+  });
+
+  btnScissors.addEventListener("click", () => {
+    game2(SCISSORS);
+  });
+  turn = 0;
+  console.log(`${p2txt} turno: ${turn}`);
+}
 
 function game(userChoice1, userChoice2) {
   const computerOption = calcComputerOption();
@@ -97,21 +98,32 @@ function game(userChoice1, userChoice2) {
 
   switch (result) {
     case DRAW:
-      txtMessage.innerHTML = "Empate.";
-      console.log("Empate.");
-      txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
-      //txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      txtMessage.innerHTML = `${p1txt} Empate.`;
+      if (p2txt == undefined) {
+        txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
+      } else {
+        txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
+        txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      }
       break;
     case WIN:
       countPlayer1 += 1;
-      txtMessage.innerHTML = "Ganaste. + 1 punto.";
-      txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
-      //txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      txtMessage.innerHTML = `${p1txt} Ganaste. + 1 punto.`;
+      if (p2txt == undefined) {
+        txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
+      } else {
+        txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
+        txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      }
       break;
     case LOSE:
-      txtMessage.innerHTML = "Perdiste.";
-      txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
-      //txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      txtMessage.innerHTML = `${p1txt} Perdiste.`;
+      if (p2txt == undefined) {
+        txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
+      } else {
+        txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
+        txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      }
       break;
   }
 }
@@ -125,20 +137,32 @@ function game2(userChoice1, userChoice2) {
 
   switch (result2) {
     case DRAW:
-      txtMessage.innerHTML = "Empate.";
-      //txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
-      txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      txtMessage.innerHTML = `${p2txt} Empate.`;
+      if (p1txt == undefined) {
+        txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      } else {
+        txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
+        txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      }
       break;
     case WIN:
       countPlayer2 += 1;
-      txtMessage.innerHTML = "Ganaste. + 1 punto.";
-      //txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
-      txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      txtMessage.innerHTML = `${p2txt} Ganaste. + 1 punto.`;
+      if (p1txt == undefined) {
+        txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      } else {
+        txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
+        txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      }
       break;
     case LOSE:
-      txtMessage.innerHTML = "Perdiste.";
-      //txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
-      txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      txtMessage.innerHTML = `${p2txt} Perdiste.`;
+      if (p1txt == undefined) {
+        txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      } else {
+        txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
+        txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
+      }
       break;
   }
 }
@@ -159,15 +183,30 @@ function calcComputerOption() {
 function calcResult(userChoice1, userChoice2, computerOption) {
   if (userChoice1 === computerOption || userChoice2 === computerOption) {
     return DRAW;
-  } else if (userChoice1 === ROCK && computerOption === SCISSORS || userChoice2 === ROCK && computerOption === SCISSORS) {
+  } else if (
+    (userChoice1 === ROCK && computerOption === SCISSORS) ||
+    (userChoice2 === ROCK && computerOption === SCISSORS)
+  ) {
     return WIN;
-  } else if (userChoice1 === PAPER && computerOption === ROCK || userChoice2 === PAPER && computerOption === ROCK) {
+  } else if (
+    (userChoice1 === PAPER && computerOption === ROCK) ||
+    (userChoice2 === PAPER && computerOption === ROCK)
+  ) {
     return WIN;
-  } else if (userChoice1 === SCISSORS && computerOption === PAPER || userChoice2 === SCISSORS && computerOption === PAPER) {
+  } else if (
+    (userChoice1 === SCISSORS && computerOption === PAPER) ||
+    (userChoice2 === SCISSORS && computerOption === PAPER)
+  ) {
     return WIN;
-  } else if (userChoice1 === ROCK && computerOption === PAPER || userChoice2 === ROCK && computerOption === PAPER) {
+  } else if (
+    (userChoice1 === ROCK && computerOption === PAPER) ||
+    (userChoice2 === ROCK && computerOption === PAPER)
+  ) {
     return LOSE;
-  } else if (userChoice1 === PAPER && computerOption === SCISSORS || userChoice2 === PAPER && computerOption === SCISSORS) {
+  } else if (
+    (userChoice1 === PAPER && computerOption === SCISSORS) ||
+    (userChoice2 === PAPER && computerOption === SCISSORS)
+  ) {
     return LOSE;
   } else if (userChoice1 === SCISSORS && computerOption === ROCK) {
     return LOSE;
