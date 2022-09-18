@@ -2,6 +2,8 @@ const ROCK = "rock";
 const PAPER = "paper";
 const SCISSORS = "scissors";
 
+var turn;
+
 var countPlayer1 = 0;
 var countPlayer2 = 0;
 var p1txt;
@@ -50,8 +52,9 @@ btnPlay.addEventListener("click", () => {
     });
 
     document.getElementById("player1").value = "";
-  } else {
-    txtMessage.innerHTML = "Juego iniciado para 2 jugadores.";
+    //document.getElementById("player2").value = "";
+  } else if (p1txt == undefined && p2txt != undefined) {
+    txtMessage.innerHTML = "Juego para 1 jugador.";
     btnRock.addEventListener("click", () => {
       game2(ROCK);
     });
@@ -65,12 +68,29 @@ btnPlay.addEventListener("click", () => {
     });
 
     document.getElementById("player1").value = "";
+    document.getElementById("player2").value = "";
+  } else {
+    txtMessage.innerHTML = "Juego para 2 jugadores.";
+    btnRock.addEventListener("click", () => {
+      game(ROCK);
+    });
+
+    btnPaper.addEventListener("click", () => {
+      game(PAPER);
+    });
+
+    btnScissors.addEventListener("click", () => {
+      game(SCISSORS);
+    });
+
+    document.getElementById("player1").value = "";
+    document.getElementById("player2").value = "";
   }
 });
 
-function game(userChoice1) {
+function game(userChoice1, userChoice2) {
   const computerOption = calcComputerOption();
-  const result = calcResult(userChoice1, computerOption);
+  const result = calcResult(userChoice1, userChoice2, computerOption);
 
   computerImg.src = `img/${computerOption}.png`;
   txtComputer.innerHTML = `${computerOption}`;
@@ -78,6 +98,7 @@ function game(userChoice1) {
   switch (result) {
     case DRAW:
       txtMessage.innerHTML = "Empate.";
+      console.log("Empate.");
       txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
       //txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
       break;
@@ -95,30 +116,28 @@ function game(userChoice1) {
   }
 }
 
-function game2(userChoice2) {
+function game2(userChoice1, userChoice2) {
   const computerOption = calcComputerOption();
-  const result = calcResult(userChoice2, computerOption);
+  const result2 = calcResult(userChoice1, userChoice2, computerOption);
 
   computerImg.src = `img/${computerOption}.png`;
   txtComputer.innerHTML = `${computerOption}`;
 
-  
-
-  switch (result) {
+  switch (result2) {
     case DRAW:
       txtMessage.innerHTML = "Empate.";
-      txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
+      //txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
       txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
       break;
     case WIN:
-      countPlayer1 += 1;
+      countPlayer2 += 1;
       txtMessage.innerHTML = "Ganaste. + 1 punto.";
-      txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
+      //txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
       txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
       break;
     case LOSE:
       txtMessage.innerHTML = "Perdiste.";
-      txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
+      //txtPointsP1.innerHTML = `${p1txt} Puntos: ${countPlayer1}`;
       txtPointsP2.innerHTML = `${p2txt} Puntos: ${countPlayer2}`;
       break;
   }
@@ -137,18 +156,18 @@ function calcComputerOption() {
 }
 
 // // Function: calcResult -> Calcular el resultado
-function calcResult(userChoice1, computerOption) {
-  if (userChoice1 === computerOption) {
+function calcResult(userChoice1, userChoice2, computerOption) {
+  if (userChoice1 === computerOption || userChoice2 === computerOption) {
     return DRAW;
-  } else if (userChoice1 === ROCK && computerOption === SCISSORS) {
+  } else if (userChoice1 === ROCK && computerOption === SCISSORS || userChoice2 === ROCK && computerOption === SCISSORS) {
     return WIN;
-  } else if (userChoice1 === PAPER && computerOption === ROCK) {
+  } else if (userChoice1 === PAPER && computerOption === ROCK || userChoice2 === PAPER && computerOption === ROCK) {
     return WIN;
-  } else if (userChoice1 === SCISSORS && computerOption === PAPER) {
+  } else if (userChoice1 === SCISSORS && computerOption === PAPER || userChoice2 === SCISSORS && computerOption === PAPER) {
     return WIN;
-  } else if (userChoice1 === ROCK && computerOption === PAPER) {
+  } else if (userChoice1 === ROCK && computerOption === PAPER || userChoice2 === ROCK && computerOption === PAPER) {
     return LOSE;
-  } else if (userChoice1 === PAPER && computerOption === SCISSORS) {
+  } else if (userChoice1 === PAPER && computerOption === SCISSORS || userChoice2 === PAPER && computerOption === SCISSORS) {
     return LOSE;
   } else if (userChoice1 === SCISSORS && computerOption === ROCK) {
     return LOSE;
@@ -156,10 +175,10 @@ function calcResult(userChoice1, computerOption) {
 }
 
 // Function: play -> Jugar 2 personas
-function finJuego() {
+/*function finJuego() {
   if (countPlayer1 == 5) {
     txtMessage.innerHTML = `${p1txt} Ganaste la ronda`;
   } else if (countPlayer2 == 5) {
     txtMessage.innerHTML = `${p2txt} Ganaste la ronda.`;
   }
-}
+}*/
